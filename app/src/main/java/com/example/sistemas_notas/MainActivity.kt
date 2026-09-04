@@ -1,6 +1,7 @@
 package com.example.sistemas_notas
 
 import android.os.Bundle
+import android.text.Html
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
@@ -60,17 +61,18 @@ class MainActivity : AppCompatActivity() {
                 return@setOnClickListener
             }
 
-            var resultados = ""
+            var resultadosHtml = ""
             // Recorrer el TreeMap (ya está ordenado alfabéticamente)
             for ((nombre, nota) in listaEstudiantes) {
-                val estado = when {
-                    nota >= 13 -> "Aprobado"
-                    nota >= 10 -> "Sustitutorio"
-                    else -> "Desaprobado"
+                val (estado, colorHex) = when {
+                    nota >= 13 -> "Aprobado" to "#2E7D32"     // Verde
+                    nota >= 10 -> "Sustitutorio" to "#F9A825" // Naranja/Amarillo
+                    else -> "Desaprobado" to "#C62828"        // Rojo
                 }
-                resultados += "$nombre - $nota - $estado\n"
+                resultadosHtml += "<b>$nombre</b> - $nota - <font color='$colorHex'>$estado</font><br/>"
             }
-            tvResults.text = resultados
+            // Mostrar texto con formato HTML
+            tvResults.text = Html.fromHtml(resultadosHtml, Html.FROM_HTML_MODE_LEGACY)
         }
     }
 

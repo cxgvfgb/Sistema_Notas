@@ -1,11 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="primaryColor">#2C3E50</color>
-    <color name="primaryLightColor">#34495E</color>
-    <color name="secondaryColor">#27AE60</color>
-    <color name="backgroundColor">#F4F7F6</color>
-    <color name="textColor">#2C3E50</color>
+    <color name="primaryColor">#1A237E</color>
+    <color name="primaryLightColor">#3949AB</color>
+    <color name="secondaryColor">#43A047</color>
+    <color name="backgroundColor">#F5F5F5</color>
+    <color name="textColor">#212121</color>
     <color name="white">#FFFFFF</color>
     <color name="black">#000000</color>
-    <color name="gray">#BDC3C7</color>
+    <color name="gray">#BDBDBD</color>
+
+    <!-- Colores para estados -->
+    <color name="colorAprobado">#2E7D32</color>
+    <color name="colorSustitutorio">#F9A825</color>
+    <color name="colorDesaprobado">#C62828</color>
+
+    <!-- Acentos -->
+    <color name="accentColor">#FF4081</color>
 </resources>
