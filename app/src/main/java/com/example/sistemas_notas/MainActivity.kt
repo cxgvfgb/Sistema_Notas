@@ -38,7 +38,13 @@ class MainActivity : AppCompatActivity() {
                 return@setOnClickListener
             }
 
-            // 2. Validar que sea un número y esté entre 0 y 20
+            // 2. Validar nombre duplicado
+            if (listaEstudiantes.containsKey(nombre)) {
+                mostrarAviso(getString(R.string.error_duplicate_name))
+                return@setOnClickListener
+            }
+
+            // 3. Validar que sea un número y esté entre 0 y 20
             try {
                 val nota = notaTexto.toInt()
                 if (nota < 0 || nota > 20) {
