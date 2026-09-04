@@ -2,6 +2,7 @@ package com.example.sistemas_notas
 
 import android.os.Bundle
 import android.text.Html
+import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
@@ -24,6 +25,7 @@ class MainActivity : AppCompatActivity() {
         val btnSave = findViewById<Button>(R.id.btnSave)
         val btnShow = findViewById<Button>(R.id.btnShow)
         val tvResults = findViewById<TextView>(R.id.tvResults)
+        val tvResultsTitle = findViewById<TextView>(R.id.tvResultsTitle)
 
         // Acción del botón GUARDAR
         btnSave.setOnClickListener {
@@ -57,9 +59,15 @@ class MainActivity : AppCompatActivity() {
         // Acción del botón MOSTRAR
         btnShow.setOnClickListener {
             if (listaEstudiantes.isEmpty()) {
-                tvResults.text = "No hay estudiantes registrados."
+                mostrarAviso("No hay estudiantes registrados para mostrar.")
+                tvResults.visibility = View.GONE
+                tvResultsTitle.visibility = View.GONE
                 return@setOnClickListener
             }
+
+            // Mostrar el contenedor y el título
+            tvResults.visibility = View.VISIBLE
+            tvResultsTitle.visibility = View.VISIBLE
 
             var resultadosHtml = ""
             // Recorrer el TreeMap (ya está ordenado alfabéticamente)
