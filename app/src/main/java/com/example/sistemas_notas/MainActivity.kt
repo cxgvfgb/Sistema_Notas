@@ -20,17 +20,17 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         // Vincular componentes de la interfaz
-        val etName = findViewById<EditText>(R.id.etName)
-        val etGrade = findViewById<EditText>(R.id.etGrade)
-        val btnSave = findViewById<Button>(R.id.btnSave)
-        val btnShow = findViewById<Button>(R.id.btnShow)
-        val tvResults = findViewById<TextView>(R.id.tvResults)
-        val tvResultsTitle = findViewById<TextView>(R.id.tvResultsTitle)
+        val etNombre = findViewById<EditText>(R.id.etNombre)
+        val etNota = findViewById<EditText>(R.id.etNota)
+        val btnGuardar = findViewById<Button>(R.id.btnGuardar)
+        val btnMostrar = findViewById<Button>(R.id.btnMostrar)
+        val tvResultados = findViewById<TextView>(R.id.tvResultados)
+        val tvTituloResultados = findViewById<TextView>(R.id.tvTituloResultados)
 
         // Acción del botón GUARDAR
-        btnSave.setOnClickListener {
-            val nombre = etName.text.toString().trim()
-            val notaTexto = etGrade.text.toString().trim()
+        btnGuardar.setOnClickListener {
+            val nombre = etNombre.text.toString().trim()
+            val notaTexto = etNota.text.toString().trim()
 
             // 1. Validar campos vacíos
             if (nombre.isEmpty() || notaTexto.isEmpty()) {
@@ -53,9 +53,9 @@ class MainActivity : AppCompatActivity() {
                     // Guardar en el TreeMap
                     listaEstudiantes[nombre] = nota
                     // Limpiar campos
-                    etName.setText("")
-                    etGrade.setText("")
-                    etName.requestFocus()
+                    etNombre.setText("")
+                    etNota.setText("")
+                    etNombre.requestFocus()
                 }
             } catch (e: NumberFormatException) {
                 mostrarAviso(getString(R.string.error_not_number))
@@ -63,17 +63,17 @@ class MainActivity : AppCompatActivity() {
         }
 
         // Acción del botón MOSTRAR
-        btnShow.setOnClickListener {
+        btnMostrar.setOnClickListener {
             if (listaEstudiantes.isEmpty()) {
                 mostrarAviso("No hay estudiantes registrados para mostrar.")
-                tvResults.visibility = View.GONE
-                tvResultsTitle.visibility = View.GONE
+                tvResultados.visibility = View.GONE
+                tvTituloResultados.visibility = View.GONE
                 return@setOnClickListener
             }
 
             // Mostrar el contenedor y el título
-            tvResults.visibility = View.VISIBLE
-            tvResultsTitle.visibility = View.VISIBLE
+            tvResultados.visibility = View.VISIBLE
+            tvTituloResultados.visibility = View.VISIBLE
 
             var resultadosHtml = ""
             // Recorrer el TreeMap (ya está ordenado alfabéticamente)
@@ -86,7 +86,7 @@ class MainActivity : AppCompatActivity() {
                 resultadosHtml += "<b>$nombre</b> - $nota - <font color='$colorHex'>$estado</font><br/>"
             }
             // Mostrar texto con formato HTML
-            tvResults.text = Html.fromHtml(resultadosHtml, Html.FROM_HTML_MODE_LEGACY)
+            tvResultados.text = Html.fromHtml(resultadosHtml, Html.FROM_HTML_MODE_LEGACY)
         }
     }
 

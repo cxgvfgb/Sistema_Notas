@@ -37,7 +37,7 @@
             android:layout_marginBottom="32dp"/>
 
         <EditText
-            android:id="@+id/etName"
+            android:id="@+id/etNombre"
             android:layout_width="match_parent"
             android:layout_height="56dp"
             android:hint="@string/hint_name"
@@ -49,7 +49,7 @@
             android:autofillHints="name" />
 
         <EditText
-            android:id="@+id/etGrade"
+            android:id="@+id/etNota"
             android:layout_width="match_parent"
             android:layout_height="56dp"
             android:hint="@string/hint_grade"
@@ -61,7 +61,7 @@
             android:autofillHints="none" />
 
         <Button
-            android:id="@+id/btnSave"
+            android:id="@+id/btnGuardar"
             android:layout_width="match_parent"
             android:layout_height="56dp"
             android:text="@string/btn_save"
@@ -71,7 +71,7 @@
             app:cornerRadius="8dp"/>
 
         <Button
-            android:id="@+id/btnShow"
+            android:id="@+id/btnMostrar"
             android:layout_width="match_parent"
             android:layout_height="56dp"
             android:text="@string/btn_show"
@@ -81,7 +81,7 @@
             app:cornerRadius="8dp"/>
 
         <TextView
-            android:id="@+id/tvResultsTitle"
+            android:id="@+id/tvTituloResultados"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/results_title"
@@ -92,7 +92,7 @@
             android:visibility="gone"/>
 
         <TextView
-            android:id="@+id/tvResults"
+            android:id="@+id/tvResultados"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:minHeight="100dp"
