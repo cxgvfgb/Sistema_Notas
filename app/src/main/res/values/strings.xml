@@ -13,4 +13,5 @@
     <string name="dialog_ok">OK</string>
     <string name="error_invalid_grade">La nota debe estar entre 0 y 20</string>
     <string name="error_not_number">La nota debe ser un número</string>
+    <string name="results_title">Estudiantes Registrados:</string>
 </resources>
