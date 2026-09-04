@@ -7,7 +7,6 @@
     <string name="btn_save">GUARDAR</string>
     <string name="btn_show">MOSTRAR</string>
 
-    <!-- Validaciones -->
     <string name="dialog_title">AVISO</string>
     <string name="dialog_message">Por favor ingresa datos</string>
     <string name="dialog_ok">OK</string>
