@@ -1,3 +1,16 @@
 <resources>
-    <string name="app_name">Sistemas_Notas</string>
+    <string name="app_name">Sistema de Notas</string>
+    <string name="title_main">SISTEMA DE NOTAS</string>
+    <string name="subtitle_main">Registro de estudiantes</string>
+    <string name="hint_name">Nombre del estudiante</string>
+    <string name="hint_grade">Nota (0 - 20)</string>
+    <string name="btn_save">GUARDAR</string>
+    <string name="btn_show">MOSTRAR</string>
+
+    <!-- Validaciones -->
+    <string name="dialog_title">AVISO</string>
+    <string name="dialog_message">Por favor ingresa datos</string>
+    <string name="dialog_ok">OK</string>
+    <string name="error_invalid_grade">La nota debe estar entre 0 y 20</string>
+    <string name="error_not_number">La nota debe ser un número</string>
 </resources>
